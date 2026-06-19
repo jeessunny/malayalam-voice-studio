@@ -81,6 +81,24 @@
       background: radial-gradient(circle at 50% 50%, #0d0b1a 0%, #040307 100%);
     }
 
+    /* Light mode background overlay — cross-fade instead of gradient transition */
+    .bg-blobs::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, #f4f6fa 0%, #e3e7f0 100%);
+      opacity: 0;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    body.light-mode .bg-blobs::after {
+      opacity: 1;
+    }
+
     .blob {
       position: absolute;
       border-radius: 50%;
@@ -238,36 +256,54 @@
       transform: rotate(0deg) scale(1);
     }
 
-    /* Smooth theme transitions */
+    /* Smooth theme transitions — comprehensive list to prevent flicker */
     body,
     .bg-blobs,
     .blob,
     .glass-panel,
     .card-header,
+    .card-title,
     .voice-card,
+    .voice-card.selected::after,
     .voice-badge,
+    .voice-name,
+    .voice-desc,
+    .avatar,
     .select-indicator,
     .segmented-control,
     .segmented-control button,
     .segmented-control .slider-bg,
     .ios-slider,
+    .slider-label,
+    .slider-val,
+    .slider-markers,
+    .slider-markers span,
     .textarea-footer,
     .play-btn,
     .waveform-visualizer,
     .waveform-bar,
     .download-btn,
     .reset-settings-btn,
+    .generate-btn,
+    .generate-btn:disabled,
+    .logo-icon,
     .logo-text,
     .logo-gradient-text,
+    .header-container,
+    .theme-toggle-btn,
     .char-count,
     .clear-btn,
-    textarea {
-      transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                  opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    .toast,
+    .toast-msg,
+    .malayalam-textarea,
+    textarea,
+    .app-container {
+      transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* Light Mode CSS Overrides */
@@ -287,9 +323,7 @@
       box-shadow: none;
     }
 
-    body.light-mode .bg-blobs {
-      background: radial-gradient(circle at 50% 50%, #f4f6fa 0%, #e3e7f0 100%);
-    }
+    /* bg-blobs background now handled via ::after overlay for smooth transition */
     body.light-mode .blob {
       opacity: 0.28;
     }
