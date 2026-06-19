@@ -1,7 +1,7 @@
 # Malayalam Voice Studio 🎙️🔊
 Welcome to Malayalam Voice Studio. A modern, high-performance web application that converts Malayalam text into lifelike speech using the advanced Sarvam AI engine.
 
-🔴 **LIVE DEMO**: [indivoice-studio.vercel.app](https://indivoice-studio.vercel.app)
+🔴 **LIVE DEMO**: [malayalam-voice-studio.vercel.app](https://malayalam-voice-studio.vercel.app)
 
 🤖 **Made with Google Gemini**
 This entire project was designed, architected, and coded using Google Gemini.
@@ -22,6 +22,7 @@ This entire project was designed, architected, and coded using Google Gemini.
 * 💾 **Robust Download Manager**: Saves generated audio as `.wav` files on both desktop and mobile devices.
 * 🌙 **Dark/Light Mode**: iOS-style glassmorphic interface with smooth theme transitions and system preference detection.
 * 🛡️ **Secure API Proxy**: Server-side API handler with rate limiting (10 req/min per IP), input validation, and Malayalam-only enforcement.
+* 📊 **Telemetry & Analytics**: Integrated Vercel Web Analytics and Vercel Speed Insights for secure, real-time performance tracking and usage insights.
 
 🔒 **Security**
 * API key is **never exposed** to the client — all API calls go through a secure Vercel serverless function (`/api/tts`)
@@ -33,7 +34,7 @@ This entire project was designed, architected, and coded using Google Gemini.
 * **HTML5 & Vanilla Javascript (ES6)**: Single-page app, no framework overhead
 * **Vanilla CSS**: Premium glassmorphism styling with CSS custom properties
 * **Sarvam AI API**: Powered by the `bulbul:v2` model for Malayalam text-to-speech
-* **Vercel**: Serverless deployment with environment variable management
+* **Vercel**: Serverless deployment with environment variable management, Web Analytics, and Speed Insights
 
 🚀 **How to Run Locally**
 1. Clone the repository
